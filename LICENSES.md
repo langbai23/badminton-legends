@@ -39,9 +39,11 @@
 
 选型（2026-10）：只考虑可以商用、生成的音频能随游戏发布的模型。对比了 MeloTTS-Chinese（MIT）：只有一个女声，同样三句解说的音高起伏（半音标准差）约 1.2，Whisper 识别有约两成的字听错；Kokoro v1.1-zh 的 45 个男声起伏在 2.3–6.1 之间、识别基本全对。zm_096 是起伏、发音清晰度、浊音比例、语速综合靠前的一个，音高中等（中位约 150 Hz）；想换声音改 `gen-commentary.py` 的参数重新生成即可。
 
-## 球员头像照片（Wikimedia Commons / Flickr）
+## 球员头像照片（Wikimedia Commons / Flickr / YouTube 视频截图）
 
 只用当赛季（或就是那项赛事）拍的照片，没有的版本用文字头像。裁剪、缩放成 160×160 的头像（assets/avatars/），由 scripts/avatars/prepare-avatars.mjs 按 data/avatars.json 的裁剪框生成。CC BY-SA 授权的照片，裁剪后的头像同样按 CC BY-SA 发布；CC BY 的按 CC BY 署名使用。
+
+YouTube 视频截图只取频道自己拍的画面（赛后混采区、新闻发布会、新闻现场），每段视频的缩略图都看过，里面没有转播画面；视频页标的是「Creative Commons Attribution license (reuse allowed)」，即 CC BY 3.0，按 CC BY 3.0 署名使用。链接带截图所在的秒数（按视频缩略图比对，误差在几秒以内）。拍摄日期取标题、简介或画面里写的日期，没写的用上传日（雅加达时间）。
 
 | 照片 | 作者 | 授权 | 拍摄 | 用于版本 |
 |---|---|---|---|---|
@@ -78,3 +80,16 @@
 | [Blitzers ceremony photo.jpg](https://commons.wikimedia.org/wiki/File:Blitzers_ceremony_photo.jpg) | SPOTV Media Pte Ltd | CC BY-SA 4.0 | 2024-11-03 | kunlavut-24 |
 | [2022 Taipei Open final round 03.jpg](https://commons.wikimedia.org/wiki/File:2022_Taipei_Open_final_round_03.jpg) | 總統府 / Office of the President, Taiwan (photo by Simon Liu) | CC BY 2.0 | 2022-07-24 | chou-22 |
 | [20260303 130743 Yonex All England Open Badminton Championships 2026.jpg](https://commons.wikimedia.org/wiki/File:20260303_130743_Yonex_All_England_Open_Badminton_Championships_2026.jpg) | Bearas | CC BY-SA 4.0 | 2026-03-03 | lakshya-26 |
+| [_DSC1903 (Flickr 6009281118)](https://www.flickr.com/photos/55460726@N03/6009281118) | sportsflair2000 (Flickr) | CC BY-SA 2.0 | 2011-07-31 | lcw-11 |
+| [YouTube: Komentar Kento Momota Usai Juarai Indonesia Open 2018](https://www.youtube.com/watch?v=YnijEOUP_XE&t=240s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2018-07-08 | momota-18 |
+| [YouTube: Ratusan Warga Bidara Cina Sambut Jonatan Christie](https://www.youtube.com/watch?v=i1w-Expjnu0&t=33s) | POSKOTA (YouTube: @POSKOTA_Network) | CC BY 3.0 | 2018-09-01 | jonatan-18 |
+| [YouTube: \[BIO2019\] Momota, Nagahara, Zheng Siwei, He Bingjao, Antonsen & Langdridge Jawab Pertanyaan Wartawan](https://www.youtube.com/watch?v=VvfzSeoViFU&t=1155s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2019-07-15 | antonsen-19 |
+| [YouTube: Komentar Pemain Nomor Satu Dunia Victor Axelsen Usai Kalahkan Vito Bag 2 (DIM, 8 Juni 2022)](https://www.youtube.com/watch?v=fgtfpUoiFFg&t=10s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2022-06-08 | axelsen-22 |
+| [YouTube: Prescon Viktor Axelsen (Babak Final Indonesia Open 2023)](https://www.youtube.com/watch?v=U_58IhDDC-Y&t=385s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2023-06-18 | axelsen-23 |
+| [YouTube: Wawancara Shi Yu Qi (Babak 32 Besar Indonesia Open 2023)](https://www.youtube.com/watch?v=Fi-ePKnIJvQ&t=94s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2023-06-13 | shi-yuqi-23 |
+| [YouTube: Wawancara Li Shi Feng (Babak 16 Besar Indonesia Open 2023)](https://www.youtube.com/watch?v=6wegEis48MQ&t=8s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2023-06-15 | lsf-23 |
+| [YouTube: Kodai Mengidolakan Taufik Hidayat. Wawancara Kodai (Babak 16 Besar Indonesia Open 2023)](https://www.youtube.com/watch?v=s36uINY01ug&t=36s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2023-06-15 | naraoka-23 |
+| [YouTube: Spesial Terima Kasih Buat Pak Jokowi. Wawancara Ginting (Semifinal Indonesia Open 2023)](https://www.youtube.com/watch?v=HL939xq5plI&t=80s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2023-06-17 | ginting-23 |
+| [YouTube: Wawancara Shi Yu Qi, Usai Menang Babak I Indonesia Open 2024](https://www.youtube.com/watch?v=zndgB0mREMo&t=20s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2024-06-05 | shi-yuqi-24 |
+| [YouTube: Wawancara Jonatan Christie Usai Tumbang Babak I Indonesia Open 2024](https://www.youtube.com/watch?v=exCm6ZI20U0&t=116s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2024-06-05 | jonatan-24 |
+| [YouTube: Wawancara Jonatan Christie Usai Pastikan Lolos ke Perempat Final Indonesia Masters 2025](https://www.youtube.com/watch?v=3Btm7ASWxA4&t=90s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2025-01-23 | jonatan-25 |
