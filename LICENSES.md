@@ -77,3 +77,4 @@
 | [Sho Sasaki (Flickr 7851869754)](https://www.flickr.com/photos/83996619@N04/7851869754) | M.o.B 68 (Flickr: MB3cky68) | CC BY-SA 2.0 | 2012-08-02 | sasaki-12 |
 | [Blitzers ceremony photo.jpg](https://commons.wikimedia.org/wiki/File:Blitzers_ceremony_photo.jpg) | SPOTV Media Pte Ltd | CC BY-SA 4.0 | 2024-11-03 | kunlavut-24 |
 | [2022 Taipei Open final round 03.jpg](https://commons.wikimedia.org/wiki/File:2022_Taipei_Open_final_round_03.jpg) | 總統府 / Office of the President, Taiwan (photo by Simon Liu) | CC BY 2.0 | 2022-07-24 | chou-22 |
+| [20260303 130743 Yonex All England Open Badminton Championships 2026.jpg](https://commons.wikimedia.org/wiki/File:20260303_130743_Yonex_All_England_Open_Badminton_Championships_2026.jpg) | Bearas | CC BY-SA 4.0 | 2026-03-03 | lakshya-26 |
