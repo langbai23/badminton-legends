@@ -39,64 +39,41 @@
 
 选型（2026-10）：只考虑可以商用、生成的音频能随游戏发布的模型。对比了 MeloTTS-Chinese（MIT）：只有一个女声，同样三句解说的音高起伏（半音标准差）约 1.2，Whisper 识别有约两成的字听错；Kokoro v1.1-zh 的 45 个男声起伏在 2.3–6.1 之间、识别基本全对。zm_096 是起伏、发音清晰度、浊音比例、语速综合靠前的一个，音高中等（中位约 150 Hz）；想换声音改 `gen-commentary.py` 的参数重新生成即可。
 
-## 球员头像照片（Wikimedia Commons）
+## 球员头像照片（Wikimedia Commons / Flickr）
 
-裁剪、缩放成 160×160 的头像（assets/avatars/），由 scripts/avatars/prepare-avatars.mjs 按 data/avatars.json 的裁剪框生成。CC BY-SA 授权的照片，裁剪后的头像同样按 CC BY-SA 发布；CC BY 的按 CC BY 署名使用。
+只用当赛季（或就是那项赛事）拍的照片，没有的版本用文字头像。裁剪、缩放成 160×160 的头像（assets/avatars/），由 scripts/avatars/prepare-avatars.mjs 按 data/avatars.json 的裁剪框生成。CC BY-SA 授权的照片，裁剪后的头像同样按 CC BY-SA 发布；CC BY 的按 CC BY 署名使用。
 
-| 照片 | 作者 | 授权 | 用于版本 |
-|---|---|---|---|
-| [Lin Dan.jpg](https://commons.wikimedia.org/wiki/File:Lin_Dan.jpg) | Tksteven | CC BY-SA 2.5 | lin-dan-00, lin-dan-02, lin-dan-04, lin-dan-08 |
-| [Lin Dan (CHN).jpg](https://commons.wikimedia.org/wiki/File:Lin_Dan_(CHN).jpg) | Nardisoero | CC BY-SA 4.0 | lin-dan-09 |
-| [Badminton-lin dan.jpg](https://commons.wikimedia.org/wiki/File:Badminton-lin_dan.jpg) | Mayeres | CC BY-SA 3.0 | lin-dan-11 |
-| [Lin Dan Triumphs (7758831398).jpg](https://commons.wikimedia.org/wiki/File:Lin_Dan_Triumphs_(7758831398).jpg) | Antony Stanley from Gloucester, UK | CC BY-SA 2.0 | lin-dan-12 |
-| [Podium of the individual final of the badminton test event 2016 Rio.jpg](https://commons.wikimedia.org/wiki/File:Podium_of_the_individual_final_of_the_badminton_test_event_2016_Rio.jpg) | André Motta (rededoesporte.gov.br) | CC BY 3.0 | lin-dan-14, lin-dan-15, lin-dan-16 |
-| [Lin Dan photp (Cropped).jpg](https://commons.wikimedia.org/wiki/File:Lin_Dan_photp_(Cropped).jpg) | Idontknowwhatisit | CC BY-SA 4.0 | lin-dan-17, lin-dan-18 |
-| [Badminton-lee chong wei.jpg](https://commons.wikimedia.org/wiki/File:Badminton-lee_chong_wei.jpg) | Mayeres | CC BY-SA 3.0 | lcw-07, lcw-08, lcw-09, lcw-10 |
-| [Lee Chong Wei.jpg](https://commons.wikimedia.org/wiki/File:Lee_Chong_Wei.jpg) | Ian Patterson | CC BY 2.0 | lcw-11 |
-| [Lee Chong Wei2012.jpg](https://commons.wikimedia.org/wiki/File:Lee_Chong_Wei2012.jpg) | Ian Patterson | CC BY 2.0 | lcw-12 |
-| [Yonex IFB 2013 - Eightfinal - Lee Chong Wei — Ajay Jayaram 07.jpg](https://commons.wikimedia.org/wiki/File:Yonex_IFB_2013_-_Eightfinal_-_Lee_Chong_Wei_%E2%80%94_Ajay_Jayaram_07.jpg) | Pierre-Yves Beaudouin | CC BY-SA 4.0 | lcw-13 |
-| [Lee Chong Wei Indonesia Open 2016.jpg](https://commons.wikimedia.org/wiki/File:Lee_Chong_Wei_Indonesia_Open_2016.jpg) | Griff88 | CC BY-SA 4.0 | lcw-16 |
-| [Lee Chong Wei, SEA Games 2017 (cropped).jpg](https://commons.wikimedia.org/wiki/File:Lee_Chong_Wei,_SEA_Games_2017_(cropped).jpg) | WIL | CC BY 2.0 | lcw-18 |
-| [Kodai Naraoka (JPN) 2022.jpg](https://commons.wikimedia.org/wiki/File:Kodai_Naraoka_(JPN)_2022.jpg) | 吉瀚宇 | CC BY-SA 4.0 | naraoka-23 |
-| [Badminton-taufik hidayat.jpg](https://commons.wikimedia.org/wiki/File:Badminton-taufik_hidayat.jpg) | Mayeres | CC BY-SA 3.0 | taufik-00, taufik-04, taufik-05, taufik-06 |
-| [Flickr - tpower1978 - Yonex Open.jpg](https://commons.wikimedia.org/wiki/File:Flickr_-_tpower1978_-_Yonex_Open.jpg) | Tsutomu Takasu | CC BY 2.0 | taufik-11, taufik-12 |
-| [Viktor Axelsen - Indonesia Masters 2018.jpg](https://commons.wikimedia.org/wiki/File:Viktor_Axelsen_-_Indonesia_Masters_2018.jpg) | Fauziananta | CC BY 4.0 | axelsen-17, axelsen-21, axelsen-22, axelsen-23, axelsen-24, axelsen-25 |
-| [KevinCordon4.jpg](https://commons.wikimedia.org/wiki/File:KevinCordon4.jpg) | Moy180 | CC0 | cordon-11 |
-| [Kevin Cordón (Marzo 2024).jpg](https://commons.wikimedia.org/wiki/File:Kevin_Cord%C3%B3n_(Marzo_2024).jpg) | Gobierno de Guatemala | Public domain | cordon-21 |
-| [Li Shifeng (cropped).jpg](https://commons.wikimedia.org/wiki/File:Li_Shifeng_(cropped).jpg) | BugWarp | CC BY-SA 4.0 | lsf-23, lsf-25 |
-| [Chen Long (London 2012).jpg](https://commons.wikimedia.org/wiki/File:Chen_Long_(London_2012).jpg) | Ian Patterson | CC BY 2.0 | chen-long-11 |
-| [Chen Long in Olympics Games 2012.jpg](https://commons.wikimedia.org/wiki/File:Chen_Long_in_Olympics_Games_2012.jpg) | Ian Patterson | CC BY 2.0 | chen-long-14 |
-| [Chen Long (CHN).jpg](https://commons.wikimedia.org/wiki/File:Chen_Long_(CHN).jpg) | Idontknowwhatisit | CC BY-SA 4.0 | chen-long-15, chen-long-16, chen-long-21 |
-| [Yonex IFB 2013 - Eightfinal - Hans-Kristian Vittinghus — Jan Ø. Jørgensen 07.jpg](https://commons.wikimedia.org/wiki/File:Yonex_IFB_2013_-_Eightfinal_-_Hans-Kristian_Vittinghus_%E2%80%94_Jan_%C3%98._J%C3%B8rgensen_07.jpg) | Pierre-Yves Beaudouin | CC BY-SA 4.0 | jorgensen-14 |
-| [Jan O Jorgensen Indonesia Open 2016.jpg](https://commons.wikimedia.org/wiki/File:Jan_O_Jorgensen_Indonesia_Open_2016.jpg) | Griff88 | CC BY-SA 4.0 | jorgensen-15, jorgensen-16 |
-| [Ayush Shetty Taipei Open 2025.jpg](https://commons.wikimedia.org/wiki/File:Ayush_Shetty_Taipei_Open_2025.jpg) | Tony2803.tw | CC BY 4.0 | ayush-25 |
-| [Ayush Shetty - Indonesia Open 2026.jpg](https://commons.wikimedia.org/wiki/File:Ayush_Shetty_-_Indonesia_Open_2026.jpg) | Griff88 | CC BY-SA 4.0 | ayush-26 |
-| [Kento Momota (JPN) cropped (1).jpg](https://commons.wikimedia.org/wiki/File:Kento_Momota_(JPN)_cropped_(1).jpg) | Nardisoero (original photo), UCinternational (crop) | CC BY-SA 4.0 | momota-15, momota-21 |
-| [Kento Momota from Japan cropped (1).jpg](https://commons.wikimedia.org/wiki/File:Kento_Momota_from_Japan_cropped_(1).jpg) | Nardisoero (original photo), UCinternational (crop) | CC BY-SA 4.0 | momota-18, momota-19 |
-| [Kento Momota 2024.png](https://commons.wikimedia.org/wiki/File:Kento_Momota_2024.png) | Jurnal Bulutangkis | CC BY 3.0 | momota-23 |
-| [Badminton-bao chunlai.jpg](https://commons.wikimedia.org/wiki/File:Badminton-bao_chunlai.jpg) | Mayeres | CC BY-SA 3.0 | bao-06, bao-09 |
-| [Anders Antonsen ( cr.ploybuster).jpg](https://commons.wikimedia.org/wiki/File:Anders_Antonsen_(_cr.ploybuster).jpg) | Pp2704 | CC BY-SA 4.0 | antonsen-19, antonsen-24 |
-| [Alwi Farhan.jpg](https://commons.wikimedia.org/wiki/File:Alwi_Farhan.jpg) | Tony2803.tw | CC BY 4.0 | alwi-26 |
-| [Shi Yuqi - Indonesia Open 2018.jpg](https://commons.wikimedia.org/wiki/File:Shi_Yuqi_-_Indonesia_Open_2018.jpg) | Fauzi Ananta | CC BY 4.0 | shi-yuqi-17, shi-yuqi-18, shi-yuqi-23, shi-yuqi-24, shi-yuqi-25 |
-| [Badminton-wilson swiss open 2010-chen jin.jpg](https://commons.wikimedia.org/wiki/File:Badminton-wilson_swiss_open_2010-chen_jin.jpg) | Mayeres | CC BY-SA 3.0 | chen-jin-08, chen-jin-10 |
-| [Yonex IFB 2013 - Quarterfinal - Kenichi Tago vs Tommy Sugiarto 02.jpg](https://commons.wikimedia.org/wiki/File:Yonex_IFB_2013_-_Quarterfinal_-_Kenichi_Tago_vs_Tommy_Sugiarto_02.jpg) | Pierre-Yves Beaudouin | CC BY-SA 4.0 | tago-10, tago-14 |
-| [Kunlavut Vitidsarn Indonesia Masters 2025.jpg](https://commons.wikimedia.org/wiki/File:Kunlavut_Vitidsarn_Indonesia_Masters_2025.jpg) | Jurnal Bulutangkis | CC BY 3.0 | kunlavut-23, kunlavut-24, kunlavut-25, kunlavut-26 |
-| [Badminton-lee hyun il cropped.jpg](https://commons.wikimedia.org/wiki/File:Badminton-lee_hyun_il_cropped.jpg) | Mayeres | CC BY-SA 3.0 | lhi-03, lhi-08 |
-| [Lee Hyun Il.jpg](https://commons.wikimedia.org/wiki/File:Lee_Hyun_Il.jpg) | TSportsasia | CC BY-SA 3.0 | lhi-12 |
-| [Weng Hongyang Badminton Player.jpg](https://commons.wikimedia.org/wiki/File:Weng_Hongyang_Badminton_Player.jpg) | Hihi reny | CC BY-SA 4.0 | weng-23, weng-24 |
-| [Chou Tien-Chen (TPE) 2018.jpg](https://commons.wikimedia.org/wiki/File:Chou_Tien-Chen_(TPE)_2018.jpg) | Chartlin | CC BY-SA 4.0 | chou-18 |
-| [2019 Chinese Taipei Open 33.jpg](https://commons.wikimedia.org/wiki/File:2019_Chinese_Taipei_Open_33.jpg) | De-Shao Liu (Terry850324) | CC BY-SA 4.0 | chou-19 |
-| [周天成2024台北羽球公開賽.jpg](https://commons.wikimedia.org/wiki/File:%E5%91%A8%E5%A4%A9%E6%88%902024%E5%8F%B0%E5%8C%97%E7%BE%BD%E7%90%83%E5%85%AC%E9%96%8B%E8%B3%BD.jpg) | Tony2803.tw | CC BY 4.0 | chou-22, chou-26 |
-| [Son Wan Ho - 2015.jpg](https://commons.wikimedia.org/wiki/File:Son_Wan_Ho_-_2015.jpg) | Donaldinyongin | CC BY-SA 4.0 | son-14, son-17, son-18 |
-| [US Open Badminton 2011 2822.jpg](https://commons.wikimedia.org/wiki/File:US_Open_Badminton_2011_2822.jpg) | Sunny Wan from Union City | CC BY 2.0 | sasaki-11, sasaki-12 |
-| [Badminton Peter Gade.jpg](https://commons.wikimedia.org/wiki/File:Badminton_Peter_Gade.jpg) | Manuel Rösler (petergade.net) | CC BY 2.0 | gade-99 |
-| [Badminton-wilson swiss open 2010-peter gade.jpg](https://commons.wikimedia.org/wiki/File:Badminton-wilson_swiss_open_2010-peter_gade.jpg) | Mayeres | CC BY-SA 3.0 | gade-08, gade-12 |
-| [Lee & Ng President's Cup 2023 (cropped).jpg](https://commons.wikimedia.org/wiki/File:Lee_%26_Ng_President%27s_Cup_2023_(cropped).jpg) | Hiroki.loh.st | CC BY-SA 4.0 | lzj-21, lzj-22, lzj-24 |
-| [Victor Lai - Indonesia Open 2026.jpg](https://commons.wikimedia.org/wiki/File:Victor_Lai_-_Indonesia_Open_2026.jpg) | Griff88 | CC BY-SA 4.0 | victor-lai-25, victor-lai-26 |
-| [Anthony Sinisuka Ginting - Indonesia Masters 2018.jpg](https://commons.wikimedia.org/wiki/File:Anthony_Sinisuka_Ginting_-_Indonesia_Masters_2018.jpg) | Fauziananta | CC BY 4.0 | ginting-18 |
-| [Anthony Ginting Juara Indonesia-Masters.jpg](https://commons.wikimedia.org/wiki/File:Anthony_Ginting_Juara_Indonesia-Masters.jpg) | Adityadandito | CC BY-SA 4.0 | ginting-21, ginting-23 |
-| [Sea Games Badmintion Final (37158064116) (cropped).jpg](https://commons.wikimedia.org/wiki/File:Sea_Games_Badmintion_Final_(37158064116)_(cropped).jpg) | WIL | CC BY 2.0 | jonatan-18 |
-| [2017 Sea Games Badminton - Jonatan Christie .jpg](https://commons.wikimedia.org/wiki/File:2017_Sea_Games_Badminton_-_Jonatan_Christie_.jpg) | WIL | CC BY 2.0 | jonatan-24, jonatan-25 |
-| [Alex Lanier (FRA) 2023.jpg](https://commons.wikimedia.org/wiki/File:Alex_Lanier_(FRA)_2023.jpg) | De Reinal | CC BY 4.0 | lanier-24 |
-| [Alex Lanier 2026.jpg](https://commons.wikimedia.org/wiki/File:Alex_Lanier_2026.jpg) | De Reinal | CC0 | lanier-26 |
-| [Loh Kean Yew.jpg](https://commons.wikimedia.org/wiki/File:Loh_Kean_Yew.jpg) | Nardisoero | CC BY-SA 4.0 | loh-21 |
+| 照片 | 作者 | 授权 | 拍摄 | 用于版本 |
+|---|---|---|---|---|
+| [Lin Dan.jpg](https://commons.wikimedia.org/wiki/File:Lin_Dan.jpg) | Tksteven | CC BY-SA 2.5 | 2008 | lin-dan-08 |
+| [Badminton-lin dan.jpg](https://commons.wikimedia.org/wiki/File:Badminton-lin_dan.jpg) | Mayeres | CC BY-SA 3.0 | 2011 | lin-dan-11 |
+| [Lin Dan Triumphs (7758831398).jpg](https://commons.wikimedia.org/wiki/File:Lin_Dan_Triumphs_(7758831398).jpg) | Antony Stanley from Gloucester, UK | CC BY-SA 2.0 | 2012 | lin-dan-12 |
+| [Podium of the individual final of the badminton test event 2016 Rio.jpg](https://commons.wikimedia.org/wiki/File:Podium_of_the_individual_final_of_the_badminton_test_event_2016_Rio.jpg) | André Motta (rededoesporte.gov.br) | CC BY 3.0 | 2015 | lin-dan-15 |
+| [Lin Dan photp (Cropped).jpg](https://commons.wikimedia.org/wiki/File:Lin_Dan_photp_(Cropped).jpg) | Idontknowwhatisit | CC BY-SA 4.0 | 2017 | lin-dan-17 |
+| [Badminton-lee chong wei.jpg](https://commons.wikimedia.org/wiki/File:Badminton-lee_chong_wei.jpg) | Mayeres | CC BY-SA 3.0 | 2009 | lcw-09 |
+| [Lee Chong Wei2012.jpg](https://commons.wikimedia.org/wiki/File:Lee_Chong_Wei2012.jpg) | Ian Patterson | CC BY 2.0 | 2012 | lcw-12 |
+| [Yonex IFB 2013 - Eightfinal - Lee Chong Wei — Ajay Jayaram 07.jpg](https://commons.wikimedia.org/wiki/File:Yonex_IFB_2013_-_Eightfinal_-_Lee_Chong_Wei_%E2%80%94_Ajay_Jayaram_07.jpg) | Pierre-Yves Beaudouin | CC BY-SA 4.0 | 2013 | lcw-13 |
+| [Lee Chong Wei Indonesia Open 2016.jpg](https://commons.wikimedia.org/wiki/File:Lee_Chong_Wei_Indonesia_Open_2016.jpg) | Griff88 | CC BY-SA 4.0 | 2016 | lcw-16 |
+| [KevinCordon4.jpg](https://commons.wikimedia.org/wiki/File:KevinCordon4.jpg) | Moy180 | CC0 | 2011 | cordon-11 |
+| [Jan O Jorgensen Indonesia Open 2016.jpg](https://commons.wikimedia.org/wiki/File:Jan_O_Jorgensen_Indonesia_Open_2016.jpg) | Griff88 | CC BY-SA 4.0 | 2016 | jorgensen-16 |
+| [Ayush Shetty Taipei Open 2025.jpg](https://commons.wikimedia.org/wiki/File:Ayush_Shetty_Taipei_Open_2025.jpg) | Tony2803.tw | CC BY 4.0 | 2025 | ayush-25 |
+| [Ayush Shetty - Indonesia Open 2026.jpg](https://commons.wikimedia.org/wiki/File:Ayush_Shetty_-_Indonesia_Open_2026.jpg) | Griff88 | CC BY-SA 4.0 | 2026 | ayush-26 |
+| [Kento Momota from Japan cropped (1).jpg](https://commons.wikimedia.org/wiki/File:Kento_Momota_from_Japan_cropped_(1).jpg) | Nardisoero (original photo), UCinternational (crop) | CC BY-SA 4.0 | 2019 | momota-19 |
+| [Shi Yuqi - Indonesia Open 2018.jpg](https://commons.wikimedia.org/wiki/File:Shi_Yuqi_-_Indonesia_Open_2018.jpg) | Fauzi Ananta | CC BY 4.0 | 2018 | shi-yuqi-18 |
+| [Badminton-wilson swiss open 2010-chen jin.jpg](https://commons.wikimedia.org/wiki/File:Badminton-wilson_swiss_open_2010-chen_jin.jpg) | Mayeres | CC BY-SA 3.0 | 2010 | chen-jin-10 |
+| [Kunlavut Vitidsarn Indonesia Masters 2025.jpg](https://commons.wikimedia.org/wiki/File:Kunlavut_Vitidsarn_Indonesia_Masters_2025.jpg) | Jurnal Bulutangkis | CC BY 3.0 | 2025 | kunlavut-25 |
+| [Badminton-lee hyun il cropped.jpg](https://commons.wikimedia.org/wiki/File:Badminton-lee_hyun_il_cropped.jpg) | Mayeres | CC BY-SA 3.0 | 2008 | lhi-08 |
+| [Chou Tien-Chen (TPE) 2018.jpg](https://commons.wikimedia.org/wiki/File:Chou_Tien-Chen_(TPE)_2018.jpg) | Chartlin | CC BY-SA 4.0 | 2018 | chou-18 |
+| [2019 Chinese Taipei Open 33.jpg](https://commons.wikimedia.org/wiki/File:2019_Chinese_Taipei_Open_33.jpg) | De-Shao Liu (Terry850324) | CC BY-SA 4.0 | 2019 | chou-19 |
+| [US Open Badminton 2011 2822.jpg](https://commons.wikimedia.org/wiki/File:US_Open_Badminton_2011_2822.jpg) | Sunny Wan from Union City | CC BY 2.0 | 2011 | sasaki-11 |
+| [Victor Lai - Indonesia Open 2026.jpg](https://commons.wikimedia.org/wiki/File:Victor_Lai_-_Indonesia_Open_2026.jpg) | Griff88 | CC BY-SA 4.0 | 2026 | victor-lai-26 |
+| [Anthony Sinisuka Ginting - Indonesia Masters 2018.jpg](https://commons.wikimedia.org/wiki/File:Anthony_Sinisuka_Ginting_-_Indonesia_Masters_2018.jpg) | Fauziananta | CC BY 4.0 | 2018 | ginting-18 |
+| [Alex Lanier 2026.jpg](https://commons.wikimedia.org/wiki/File:Alex_Lanier_2026.jpg) | De Reinal | CC0 | 2026 | lanier-26 |
+| [Loh Kean Yew.jpg](https://commons.wikimedia.org/wiki/File:Loh_Kean_Yew.jpg) | Nardisoero | CC BY-SA 4.0 | 2021 | loh-21 |
+| [Lee Chong Wei at the 2008 Olympic games.jpg](https://commons.wikimedia.org/wiki/File:Lee_Chong_Wei_at_the_2008_Olympic_games.jpg) | Dmitry Portnyagin (en:User:Дима) | CC BY-SA 3.0 | 2008-08-15 | lcw-08 |
+| [Badminton (Flickr 3590034170)](https://www.flickr.com/photos/77516834@N00/3590034170) | Tom Thai (Flickr: eviltomthai) | CC BY 2.0 | 2008-08-15 | chen-jin-08 |
+| [Épreuve Badminton Jeux Olympiques 2024 Arena Porte Chapelle - Paris XVIII (FR75) - 2024-07-28 - 21.jpg](https://commons.wikimedia.org/wiki/File:%C3%89preuve_Badminton_Jeux_Olympiques_2024_Arena_Porte_Chapelle_-_Paris_XVIII_(FR75)_-_2024-07-28_-_21.jpg) | Chabe01 | CC BY-SA 4.0 | 2024-07-28 | antonsen-24 |
+| [Badminton 2012 Olympics.jpg](https://commons.wikimedia.org/wiki/File:Badminton_2012_Olympics.jpg) | Chris Eason | CC BY 2.0 | 2012-08-03 | lhi-12 |
+| [Sho Sasaki (Flickr 7851869754)](https://www.flickr.com/photos/83996619@N04/7851869754) | M.o.B 68 (Flickr: MB3cky68) | CC BY-SA 2.0 | 2012-08-02 | sasaki-12 |
+| [Blitzers ceremony photo.jpg](https://commons.wikimedia.org/wiki/File:Blitzers_ceremony_photo.jpg) | SPOTV Media Pte Ltd | CC BY-SA 4.0 | 2024-11-03 | kunlavut-24 |
+| [2022 Taipei Open final round 03.jpg](https://commons.wikimedia.org/wiki/File:2022_Taipei_Open_final_round_03.jpg) | 總統府 / Office of the President, Taiwan (photo by Simon Liu) | CC BY 2.0 | 2022-07-24 | chou-22 |
