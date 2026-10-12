@@ -80,6 +80,7 @@ YouTube 视频截图只取频道自己拍的画面（赛后混采区、新闻发
 | [Blitzers ceremony photo.jpg](https://commons.wikimedia.org/wiki/File:Blitzers_ceremony_photo.jpg) | SPOTV Media Pte Ltd | CC BY-SA 4.0 | 2024-11-03 | kunlavut-24 |
 | [2022 Taipei Open final round 03.jpg](https://commons.wikimedia.org/wiki/File:2022_Taipei_Open_final_round_03.jpg) | 總統府 / Office of the President, Taiwan (photo by Simon Liu) | CC BY 2.0 | 2022-07-24 | chou-22 |
 | [20260303 130743 Yonex All England Open Badminton Championships 2026.jpg](https://commons.wikimedia.org/wiki/File:20260303_130743_Yonex_All_England_Open_Badminton_Championships_2026.jpg) | Bearas | CC BY-SA 4.0 | 2026-03-03 | lakshya-26 |
+| [Christo Popov - Indonesia Open 2026.jpg](https://commons.wikimedia.org/wiki/File:Christo_Popov_-_Indonesia_Open_2026.jpg) | Griff88 | CC BY-SA 4.0 | 2026-06-04 | christo-26 |
 | [_DSC1903 (Flickr 6009281118)](https://www.flickr.com/photos/55460726@N03/6009281118) | sportsflair2000 (Flickr) | CC BY-SA 2.0 | 2011-07-31 | lcw-11 |
 | [YouTube: Komentar Kento Momota Usai Juarai Indonesia Open 2018](https://www.youtube.com/watch?v=YnijEOUP_XE&t=240s) | Jurnal Bulutangkis (YouTube: @JurnalBulutangkis) | CC BY 3.0 | 2018-07-08 | momota-18 |
 | [YouTube: Ratusan Warga Bidara Cina Sambut Jonatan Christie](https://www.youtube.com/watch?v=i1w-Expjnu0&t=33s) | POSKOTA (YouTube: @POSKOTA_Network) | CC BY 3.0 | 2018-09-01 | jonatan-18 |
