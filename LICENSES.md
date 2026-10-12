@@ -2,8 +2,13 @@
 
 `assets/character.glb` 由 `scripts/build-character.mjs` 生成，来源：
 
-- Quaternius **Universal Animation Library**（UAL1、UAL2，Standard 版）：人体模型和大部分动作。授权 CC0 1.0。
-  下载自 GitHub 镜像 NafisRayan/Animate-Rigged-Humanoid-No-Blender（附 Quaternius 的 License.txt）。
+- Quaternius **Universal Base Characters**（Standard 免费版）：人体模型（Superhero_Male_FullBody，只用身体网格和骨骼，
+  不用贴图、眼睛和头发网格）。授权 CC0 1.0（包里的 License_Standard.txt：「CC0 1.0 Universal (CC0 1.0) Public Domain
+  Dedication」；页面上写「Free to use in personal, educational and commercial projects」）。2026-10 从 Quaternius 自己的
+  itch.io 页面 https://quaternius.itch.io/universal-base-characters 按「Name your own price」0 元下载（不用账号），
+  下载的压缩包里只有 glTF / FBX / bin 模型、PNG 贴图和两个说明 txt，没有可执行文件或脚本。
+- Quaternius **Universal Animation Library**（UAL1、UAL2，Standard 版）：大部分动作（2026-10 以前也用它的木偶人体模型）。
+  授权 CC0 1.0。下载自 GitHub 镜像 NafisRayan/Animate-Rigged-Humanoid-No-Blender（附 Quaternius 的 License.txt）。
 - **Mesh2Motion** 动作包（human-addon-animations.glb）：侧滑步、后退步、闪躲（用作蹬跨）、格斗准备姿势、三点着地、握拳庆祝、跪地喘气。
   美术资源授权 CC0，见 scottpetrovic/mesh2motion-app。
 
