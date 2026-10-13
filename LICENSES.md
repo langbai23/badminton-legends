@@ -2,7 +2,16 @@
 
 `assets/character.glb` 由 `scripts/build-character.mjs` 生成，来源：
 
-- Quaternius **Universal Base Characters**（Standard 免费版）：人体模型（Superhero_Male_FullBody，只用身体网格和骨骼，
+- **MakeHuman / MPFB2**（2026-10 起的身体）：`scripts/mpfb-body.py` 在 Blender 里用 MPFB 扩展（代码 GPL-3，只在 Blender 里用，不进包）
+  生成男性身体（三种体型）和 game_engine 骨骼，资源来自 MakeHuman 社区的资源包，全部 CC0 1.0（每个包里 packs/*.json 逐项写着 CC0；
+  MakeHuman 的授权说明：基础网格、变形目标、皮肤等核心资源 CC0，导出的模型 CC0）。2026-10 从官方服务器
+  files2.makehumancommunity.org/asset_packs/ 下载（不用账号）：
+  - makehuman_system_assets（makehuman_system_assets_cc0.zip）：身体基础网格和体型变形目标、眼睛（low-poly）、
+    眉毛（eyebrow009，按透明度裁成实体网格，游戏里不用贴图）、运动鞋（shoes05，减面）
+  - shirts01（shirts01_cc0.zip）：Polo 衫 namuhekam_male_polo_shirt（作者 namuhekam）
+  - pants01（pants01_cc0.zip）：长裤 toigo_wool_pants（作者 MargaretToigo），在大腿中段截成短裤
+  三个压缩包里只有 obj / mhclo / mhmat / png / thumb 和一个 json，没有可执行文件或脚本。
+- Quaternius **Universal Base Characters**（2026-10 MakeHuman 身体之前用的身体，`CHARACTER_BODY=ubc` 还能生成）（Standard 免费版）：人体模型（Superhero_Male_FullBody，只用身体网格和骨骼，
   不用贴图、眼睛和头发网格）。授权 CC0 1.0（包里的 License_Standard.txt：「CC0 1.0 Universal (CC0 1.0) Public Domain
   Dedication」；页面上写「Free to use in personal, educational and commercial projects」）。2026-10 从 Quaternius 自己的
   itch.io 页面 https://quaternius.itch.io/universal-base-characters 按「Name your own price」0 元下载（不用账号），
