@@ -27,6 +27,10 @@
 
 `data/continuity.json` 的 `olympics2012` 是从伦敦 2012 奥运羽毛球逐拍标注（Badminton Olympic Dataset，https://cvit.iiit.ac.in/research/projects/cvit-projects/badminton-analytics ）里两场男单半决赛（林丹对李炫一、李宗伟对谌龙）统计出来的几个数字（杀球占比、杀后下一拍还杀、接杀后转杀、前四拍有杀、杀到下一拍的时间），用来对照林丹、李宗伟「衔接」的先验。引用：Anurag Ghosh, Suriya Singh, C. V. Jawahar. *Towards Structured Analysis of Broadcast Badminton Videos.* WACV 2018。项目页没有写授权条款，只要求引用论文；仓库里只有统计数字，原始 .eaf 标注不入库。
 
+## 画质用的贴图和环境（2026-10-18）
+
+场地胶垫颗粒和法线、地板光斑、球网、广告板、记分牌、观众、司线员、裁判椅、环境贴图（球馆内景，`src/render/envmap.ts`）全部是代码里程序生成的，没有下载、没有新增素材文件，没有新的授权要求。广告板上的赞助商名字（VELOCITY、AIRSTRIKE、FEATHERLITE、ARENA CITY、SMASH+）都是虚构的。检查过 MPFB 资源包（makehuman_system_assets、shirts01、pants01，上面「角色模型」一节列的同一批，CC0）里的 Polo 衫织物贴图（`Polo_Base_Color.png`、`Polo_Normal_OpenGL.png`、`Polo_Roughness.png`，CC0）：角色模型没有 UV，用不上，所以没有打进包。
+
 ## 音效（`assets/audio/`）
 
 全部来自 Freesound，用的是网站上公开的 HQ 试听版（128 kbps mp3），由 `scripts/audio/prepare-sfx.mjs` 裁剪、转单声道、归一音量。除特别注明外授权都是 **CC0 1.0**，不需要署名，这里记下来方便查源头。
