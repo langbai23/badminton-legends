@@ -51,6 +51,59 @@
 | `cheer-big` | 赢下一局、比赛 | [AF Crowd Cheer Natural Ending.wav](https://freesound.org/people/mglennsound/sounds/678541/) · mglennsound |
 | `applause` | 礼貌掌声 | [applause-30-people-auditorium.wav](https://freesound.org/people/michaelbesaw/sounds/656691/) · michaelbesaw |
 | `ooh` | 惜败球的「哦」 | [small crowd gasp shock surprise](https://freesound.org/people/HowardV/sounds/264376/) · HowardV |
+## 转播录音提取的样本（`assets/audio/bx-*.mp3`，2026-10-18）
+
+击球声、鞋声、落地声、观众底噪和观众反应从下面这些比赛转播的音轨里提取（用户 2026-10-18 决定公开版也使用），共 133 个样本，每个都很短：击球和脚下的声音 0.15–0.5 秒，观众底噪循环 4–6 秒，观众反应 2–10 秒。
+音轨按每个动捕片段的时间窗口截取，用 Demucs（`htdemucs`，MIT）把解说人声分开后从鼓轨（击球）和其他轨（鞋声）里切出；观众反应和底噪从原音轨里选没有解说的片段（用基频检测排除有人说话的）。
+**不含解说和裁判的人声**（解说、裁判报分用 TTS 合成，见下面两节）。转播音频的版权属于转播方（国际奥委会 / 奥林匹克频道、世界羽联 BWF TV），这里没有授权，只是用户决定使用；
+想换掉某个样本：从 `assets/audio/` 删掉对应的 `bx-*.mp3`，并在 `src/audio/bank.ts` 里去掉它的元数据（`scripts/audio/extract/gen_bank_ts.py` 重新生成）；缺样本时 `sound.ts` 自动退回老的 CC0 样本和合成音。
+每个样本的来源（视频、秒数、类别、球员、测得的特征）逐个登记在 `assets/audio/provenance.json`。
+
+| 视频 | 频道 | 比赛 | 取了多少 |
+|---|---|---|---|
+| [RyAT_SSqv1k](https://www.youtube.com/watch?v=RyAT_SSqv1k) | BWF TV | Yonex All England Open 2024, Lee Zii Jia vs Lakshya Sen, QF | hit 7、sq 6 |
+| [6OfofcISnLM](https://www.youtube.com/watch?v=6OfofcISnLM) | BWF TV | HSBC BWF World Tour Finals 2024, Anders Antonsen vs Shi Yu Qi, F | hit 9、react 1、sq 2 |
+| [ytjD4f_I0sc](https://www.youtube.com/watch?v=ytjD4f_I0sc) | Olympic Games (official) | Lin Dan (CHN) v Lee Chong Wei (MAS) - Men's Badminton Singles Final | London 2012 Olympics | hit 6、react 2、sq 4 |
+| [w6kzch4Rs_Y](https://www.youtube.com/watch?v=w6kzch4Rs_Y) | BWF TV | BWF World Tour Finals 2018, R2, Shi Yuqi vs Anthony Ginting | hit 7、sq 4 |
+| [IiJEieWxA-Q](https://www.youtube.com/watch?v=IiJEieWxA-Q) | BWF TV | BWF World Championships 2023, Kunlavut Vitidsarn vs Kodai Naraoka, F | crowd 1、hit 8、react 1、sq 1 |
+| [KxMJI36_wbI](https://www.youtube.com/watch?v=KxMJI36_wbI) | BWF TV | BWF World Tour Finals 2019, Group B, Chou Tien Chen vs Anthony Ginting | hit 7、sq 1 |
+| [qqbuSiZnH1o](https://www.youtube.com/watch?v=qqbuSiZnH1o) | Olympic Games | Taufik Hidayat vs. Lin Dan at London 2012 | hit 7、react 1 |
+| [Hf-n1yfd8II](https://www.youtube.com/watch?v=Hf-n1yfd8II) | Olympic Games (official) | Badminton Semi-Finals: Lee Chong Wei vs Lin Dan - Rio 2016 FULL Replay | Throwback Thursday | hit 4、react 3、sq 1 |
+| [4QJF973GKaY](https://www.youtube.com/watch?v=4QJF973GKaY) | BWF TV | Yonex All England Open 2026, Shi Yu Qi vs Lakshya Sen, R32 | hit 3、react 1、sq 4 |
+| [IE9aG6S_3GE](https://www.youtube.com/watch?v=IE9aG6S_3GE) | Olympic Games (official) | Badminton Full Men's Singles Final - Beijing 2008 | Throwback Thursday | crowd 3、hit 2、react 2、sq 1 |
+| [0l_Dua_FXTs](https://www.youtube.com/watch?v=0l_Dua_FXTs) | Olympic Games | Lin Dan Wins Badminton Semi-Final v Lee Hyun Il, London 2012 | hit 6 |
+| [jcC1dRVU5KY](https://www.youtube.com/watch?v=jcC1dRVU5KY) | BWF TV (official) | Celcom Axiata Malaysia Open 2017 | Badminton F M3-MS | Lee Chong Wei vs Lin Dan | react 1、sq 5 |
+| [dfaoXARJN2g](https://www.youtube.com/watch?v=dfaoXARJN2g) | BWF TV | BWF World Championships 2026, Chou Tien Chen vs Kodai Naraoka, SF | hit 4、sq 1 |
+| [W_Oi9TemBW0](https://www.youtube.com/watch?v=W_Oi9TemBW0) | BWF TV (official) | VICTOR Denmark Open 2021 | Kento Momota (JPN) [1] vs Viktor Axelsen (DEN) [2] | Finals | hit 1、sq 4 |
+| [8AEWxYtOozs](https://www.youtube.com/watch?v=8AEWxYtOozs) | BWF TV (official) | Celcom Axiata Malaysia Open 2017 | Badminton SF M3-MS | Lee Chong Wei vs Wong Wing Ki Vincent | react 1、sq 4 |
+| [QHG0FvAUw7o](https://www.youtube.com/watch?v=QHG0FvAUw7o) | BWF TV (official) | TOTAL BWF World Championships 2017 | Badminton SF M1-MS | Viktor Axelsen vs Chen Long | hit 2、sq 1 |
+| [IgzQFzryp6I](https://www.youtube.com/watch?v=IgzQFzryp6I) | BWF TV (official) | CROWN GROUP Australian Open 2017 | Badminton F M3-MS | Kidambi Srikanth vs Chen Long | hit 3 |
+| [pQpYiyFMg2c](https://www.youtube.com/watch?v=pQpYiyFMg2c) | BWF TV (official) | PETRONAS Malaysia Open 2022 | Viktor Axelsen (DEN) [1] vs. Kento Momota (JPN) [2] | F | react 1 |
+
+提取流程和脚本在 `scripts/audio/extract/`（CLAUDE.md「声音系统」一节）。
+
+### 备选免费素材（2026-10-18 已下载到本机 `.cache/audio-redo/fallback/`，**没有打进游戏**）
+
+提取的声音质量够用，所以这批只留作备选（提取不到的类可以从这里补）。署名要求记在这里，真用上时要写进选人页底部的来源列表。
+
+| 声音 | 作者 / 来源 | 授权 |
+|---|---|---|
+| [13_Badminton-01.wav（499399）](https://freesound.org/people/16GStepankovaS/sounds/499399/) | 16GStepankovaS | CC0 |
+| [Badminton: racket shuttlecock（s0537）](https://bigsoundbank.com/badminton-racket-shuttlecock-s0537.html) | BigSoundBank | CC0 |
+| [Badminton Serve（849678）](https://freesound.org/people/designerschoice/sounds/849678/) | designerschoice | **CC BY 4.0，要署名** |
+| [students playing badminton in gym（629922）](https://freesound.org/people/kyles/sounds/629922/) | kyles | CC0 |
+| [BADMINTON SWISH.WAV（651857）](https://freesound.org/people/Blodeson/sounds/651857/) | Blodeson | CC0 |
+| [R18-60-Shoes Squeak on Athletic Court（479963）](https://freesound.org/people/craigsmith/sounds/479963/) | craigsmith | CC0 |
+| [basketball shoes.wav（190558）](https://freesound.org/people/conradts/sounds/190558/) | conradts | CC0 |
+| [Loud Sneaker Shoe Squeak Step（698409）](https://freesound.org/people/NovaSoundTechnology/sounds/698409/) | NovaSoundTechnology | **CC BY 4.0，要署名** |
+| [02_Running in sports hall-01.wav（499384）](https://freesound.org/people/16GStepankovaS/sounds/499384/) | 16GStepankovaS | CC0 |
+| [jump_land_wood.flac（590128）](https://freesound.org/people/Troutpack/sounds/590128/) | Troutpack | **CC BY 4.0，要署名** |
+| [small crowd cheering（264377）](https://freesound.org/people/HowardV/sounds/264377/) | HowardV | CC0 |
+| [gasps small crowd.wav（439258）](https://freesound.org/people/dreamstobecome/sounds/439258/) | dreamstobecome | CC0 |
+| [CRWDReac Crowd Gasping In Surprise 02（763876）](https://freesound.org/people/ShangusBurger/sounds/763876/) | ShangusBurger | CC0 |
+| [Crowd gasp.wav（635110）](https://freesound.org/people/RadioCounseling/sounds/635110/) | RadioCounseling | CC0 |
+| [Tennis hit.WAV in sports hall（418547）](https://freesound.org/people/14FPanskaBubik_Lukas/sounds/418547/) | 14FPanskaBubik_Lukas | CC0 |
+
 ## 裁判报分（`assets/umpire/`）
 
 用 [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M)（模型授权 Apache 2.0）通过 [kokoro-onnx](https://github.com/thewh1teagle/kokoro-onnx)（MIT）离线生成的英式男声（bm_george）词块，生成脚本 `scripts/audio/gen-umpire.py`。合成语音，不是真人录音。
