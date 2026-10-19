@@ -53,7 +53,7 @@
 | `ooh` | 惜败球的「哦」 | [small crowd gasp shock surprise](https://freesound.org/people/HowardV/sounds/264376/) · HowardV |
 ## 转播录音提取的样本（`assets/audio/bx-*.mp3`，2026-10-18）
 
-击球声、鞋声、落地声、观众底噪和观众反应从下面这些比赛转播的音轨里提取（用户 2026-10-18 决定公开版也使用），共 133 个样本，每个都很短：击球和脚下的声音 0.15–0.5 秒，观众底噪循环 4–6 秒，观众反应 2–10 秒。
+击球声、鞋声、落地声、观众底噪和观众反应从下面这些比赛转播的音轨里提取（用户 2026-10-18 决定公开版也使用），共 165 个样本，每个都很短：击球和脚下的声音 0.15–0.5 秒，观众底噪循环 4–6 秒，观众反应 2–10 秒。
 音轨按每个动捕片段的时间窗口截取，用 Demucs（`htdemucs`，MIT）把解说人声分开后从鼓轨（击球）和其他轨（鞋声）里切出；观众反应和底噪从原音轨里选没有解说的片段（用基频检测排除有人说话的）。
 **不含解说和裁判的人声**（解说、裁判报分用 TTS 合成，见下面两节）。转播音频的版权属于转播方（国际奥委会 / 奥林匹克频道、世界羽联 BWF TV），这里没有授权，只是用户决定使用；
 想换掉某个样本：从 `assets/audio/` 删掉对应的 `bx-*.mp3`，并在 `src/audio/bank.ts` 里去掉它的元数据（`scripts/audio/extract/gen_bank_ts.py` 重新生成）；缺样本时 `sound.ts` 自动退回老的 CC0 样本和合成音。
@@ -61,23 +61,27 @@
 
 | 视频 | 频道 | 比赛 | 取了多少 |
 |---|---|---|---|
-| [RyAT_SSqv1k](https://www.youtube.com/watch?v=RyAT_SSqv1k) | BWF TV | Yonex All England Open 2024, Lee Zii Jia vs Lakshya Sen, QF | hit 7、sq 6 |
-| [6OfofcISnLM](https://www.youtube.com/watch?v=6OfofcISnLM) | BWF TV | HSBC BWF World Tour Finals 2024, Anders Antonsen vs Shi Yu Qi, F | hit 9、react 1、sq 2 |
-| [ytjD4f_I0sc](https://www.youtube.com/watch?v=ytjD4f_I0sc) | Olympic Games (official) | Lin Dan (CHN) v Lee Chong Wei (MAS) - Men's Badminton Singles Final | London 2012 Olympics | hit 6、react 2、sq 4 |
-| [w6kzch4Rs_Y](https://www.youtube.com/watch?v=w6kzch4Rs_Y) | BWF TV | BWF World Tour Finals 2018, R2, Shi Yuqi vs Anthony Ginting | hit 7、sq 4 |
-| [IiJEieWxA-Q](https://www.youtube.com/watch?v=IiJEieWxA-Q) | BWF TV | BWF World Championships 2023, Kunlavut Vitidsarn vs Kodai Naraoka, F | crowd 1、hit 8、react 1、sq 1 |
-| [KxMJI36_wbI](https://www.youtube.com/watch?v=KxMJI36_wbI) | BWF TV | BWF World Tour Finals 2019, Group B, Chou Tien Chen vs Anthony Ginting | hit 7、sq 1 |
-| [qqbuSiZnH1o](https://www.youtube.com/watch?v=qqbuSiZnH1o) | Olympic Games | Taufik Hidayat vs. Lin Dan at London 2012 | hit 7、react 1 |
-| [Hf-n1yfd8II](https://www.youtube.com/watch?v=Hf-n1yfd8II) | Olympic Games (official) | Badminton Semi-Finals: Lee Chong Wei vs Lin Dan - Rio 2016 FULL Replay | Throwback Thursday | hit 4、react 3、sq 1 |
-| [4QJF973GKaY](https://www.youtube.com/watch?v=4QJF973GKaY) | BWF TV | Yonex All England Open 2026, Shi Yu Qi vs Lakshya Sen, R32 | hit 3、react 1、sq 4 |
-| [IE9aG6S_3GE](https://www.youtube.com/watch?v=IE9aG6S_3GE) | Olympic Games (official) | Badminton Full Men's Singles Final - Beijing 2008 | Throwback Thursday | crowd 3、hit 2、react 2、sq 1 |
-| [0l_Dua_FXTs](https://www.youtube.com/watch?v=0l_Dua_FXTs) | Olympic Games | Lin Dan Wins Badminton Semi-Final v Lee Hyun Il, London 2012 | hit 6 |
-| [jcC1dRVU5KY](https://www.youtube.com/watch?v=jcC1dRVU5KY) | BWF TV (official) | Celcom Axiata Malaysia Open 2017 | Badminton F M3-MS | Lee Chong Wei vs Lin Dan | react 1、sq 5 |
-| [dfaoXARJN2g](https://www.youtube.com/watch?v=dfaoXARJN2g) | BWF TV | BWF World Championships 2026, Chou Tien Chen vs Kodai Naraoka, SF | hit 4、sq 1 |
-| [W_Oi9TemBW0](https://www.youtube.com/watch?v=W_Oi9TemBW0) | BWF TV (official) | VICTOR Denmark Open 2021 | Kento Momota (JPN) [1] vs Viktor Axelsen (DEN) [2] | Finals | hit 1、sq 4 |
-| [8AEWxYtOozs](https://www.youtube.com/watch?v=8AEWxYtOozs) | BWF TV (official) | Celcom Axiata Malaysia Open 2017 | Badminton SF M3-MS | Lee Chong Wei vs Wong Wing Ki Vincent | react 1、sq 4 |
-| [QHG0FvAUw7o](https://www.youtube.com/watch?v=QHG0FvAUw7o) | BWF TV (official) | TOTAL BWF World Championships 2017 | Badminton SF M1-MS | Viktor Axelsen vs Chen Long | hit 2、sq 1 |
+| [6OfofcISnLM](https://www.youtube.com/watch?v=6OfofcISnLM) | BWF TV | HSBC BWF World Tour Finals 2024, Anders Antonsen vs Shi Yu Qi, F | hit 12、react 1、sq 3 |
+| [IiJEieWxA-Q](https://www.youtube.com/watch?v=IiJEieWxA-Q) | BWF TV | BWF World Championships 2023, Kunlavut Vitidsarn vs Kodai Naraoka, F | crowd 1、hit 10、react 1、sq 2 |
+| [w6kzch4Rs_Y](https://www.youtube.com/watch?v=w6kzch4Rs_Y) | BWF TV | BWF World Tour Finals 2018, R2, Shi Yuqi vs Anthony Ginting | hit 9、sq 4 |
+| [RyAT_SSqv1k](https://www.youtube.com/watch?v=RyAT_SSqv1k) | BWF TV | Yonex All England Open 2024, Lee Zii Jia vs Lakshya Sen, QF | hit 5、react 1、sq 7 |
+| [KxMJI36_wbI](https://www.youtube.com/watch?v=KxMJI36_wbI) | BWF TV | BWF World Tour Finals 2019, Group B, Chou Tien Chen vs Anthony Ginting | hit 11、sq 1 |
+| [qqbuSiZnH1o](https://www.youtube.com/watch?v=qqbuSiZnH1o) | Olympic Games | Taufik Hidayat vs. Lin Dan at London 2012 | hit 11、react 1 |
+| [ytjD4f_I0sc](https://www.youtube.com/watch?v=ytjD4f_I0sc) | Olympic Games (official) | Lin Dan (CHN) v Lee Chong Wei (MAS) - Men's Badminton Singles Final | London 2012 Olympics | hit 7、react 2、sq 3 |
+| [0l_Dua_FXTs](https://www.youtube.com/watch?v=0l_Dua_FXTs) | Olympic Games | Lin Dan Wins Badminton Semi-Final v Lee Hyun Il, London 2012 | hit 10 |
+| [4QJF973GKaY](https://www.youtube.com/watch?v=4QJF973GKaY) | BWF TV | Yonex All England Open 2026, Shi Yu Qi vs Lakshya Sen, R32 | hit 4、sq 5 |
+| [Hf-n1yfd8II](https://www.youtube.com/watch?v=Hf-n1yfd8II) | Olympic Games (official) | Badminton Semi-Finals: Lee Chong Wei vs Lin Dan - Rio 2016 FULL Replay | Throwback Thursday | hit 5、react 3 |
+| [ge3g-GT9j00](https://www.youtube.com/watch?v=ge3g-GT9j00) |  |  | hit 3、sq 5 |
+| [IE9aG6S_3GE](https://www.youtube.com/watch?v=IE9aG6S_3GE) | Olympic Games (official) | Badminton Full Men's Singles Final - Beijing 2008 | Throwback Thursday | crowd 3、hit 2、react 1、sq 1 |
+| [W_Oi9TemBW0](https://www.youtube.com/watch?v=W_Oi9TemBW0) | BWF TV (official) | VICTOR Denmark Open 2021 | Kento Momota (JPN) [1] vs Viktor Axelsen (DEN) [2] | Finals | hit 3、sq 3 |
+| [dfaoXARJN2g](https://www.youtube.com/watch?v=dfaoXARJN2g) | BWF TV | BWF World Championships 2026, Chou Tien Chen vs Kodai Naraoka, SF | hit 5 |
+| [yZbR5nKYiDc](https://www.youtube.com/watch?v=yZbR5nKYiDc) |  |  | hit 4 |
+| [8AEWxYtOozs](https://www.youtube.com/watch?v=8AEWxYtOozs) | BWF TV (official) | Celcom Axiata Malaysia Open 2017 | Badminton SF M3-MS | Lee Chong Wei vs Wong Wing Ki Vincent | react 1、sq 3 |
 | [IgzQFzryp6I](https://www.youtube.com/watch?v=IgzQFzryp6I) | BWF TV (official) | CROWN GROUP Australian Open 2017 | Badminton F M3-MS | Kidambi Srikanth vs Chen Long | hit 3 |
+| [jcC1dRVU5KY](https://www.youtube.com/watch?v=jcC1dRVU5KY) | BWF TV (official) | Celcom Axiata Malaysia Open 2017 | Badminton F M3-MS | Lee Chong Wei vs Lin Dan | react 1、sq 2 |
+| [QHG0FvAUw7o](https://www.youtube.com/watch?v=QHG0FvAUw7o) | BWF TV (official) | TOTAL BWF World Championships 2017 | Badminton SF M1-MS | Viktor Axelsen vs Chen Long | hit 2 |
+| [-pnq5but1xM](https://www.youtube.com/watch?v=-pnq5but1xM) |  |  | hit 1、react 1 |
+| [ceJuAyf6Gng](https://www.youtube.com/watch?v=ceJuAyf6Gng) |  |  | hit 1 |
 | [pQpYiyFMg2c](https://www.youtube.com/watch?v=pQpYiyFMg2c) | BWF TV (official) | PETRONAS Malaysia Open 2022 | Viktor Axelsen (DEN) [1] vs. Kento Momota (JPN) [2] | F | react 1 |
 
 提取流程和脚本在 `scripts/audio/extract/`（CLAUDE.md「声音系统」一节）。
@@ -110,9 +114,10 @@
 
 ## 中文解说（`assets/commentary/`）
 
-用 [Kokoro-82M-v1.1-zh](https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh)（模型授权 Apache 2.0，中文部分的训练数据是 LongMaoData 提供的专业录音）通过 [kokoro-onnx](https://github.com/thewh1teagle/kokoro-onnx)（MIT）离线生成的男声（zm_096）词块，中文转音素用 [misaki-fork[zh]](https://pypi.org/project/misaki-fork/)（Apache 2.0）。词块表在 `src/sim/say.ts`，生成脚本 `scripts/audio/gen-commentary.py`，处理脚本 `scripts/audio/prepare-commentary.mjs`。合成语音，不是真人录音。
+2026-10-18 起用 [Qwen3-TTS-12Hz-1.7B-VoiceDesign](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign)（Qwen / 阿里，代码和权重都是 Apache 2.0，HF 页面和 [GitHub](https://github.com/QwenLM/Qwen3-TTS) 都写明；Apache 2.0 没有限制生成音频的使用）离线生成的词块：用文字描述声音（「年轻男性体育解说员，嗓音明亮有力……」，激动和平稳两条描述，见 `scripts/audio/gen-commentary-qwen.py`），没有用任何真人的参考录音，不克隆任何人的声音。词块表在 `src/sim/say.ts`，处理脚本 `scripts/audio/prepare-commentary.mjs`。合成语音，不是真人录音。
+David 听了 20 句试听（Kokoro 拼接、Qwen3 男中音、Qwen3 明亮男声）后选了明亮男声。
 
-选型（2026-10）：只考虑可以商用、生成的音频能随游戏发布的模型。对比了 MeloTTS-Chinese（MIT）：只有一个女声，同样三句解说的音高起伏（半音标准差）约 1.2，Whisper 识别有约两成的字听错；Kokoro v1.1-zh 的 45 个男声起伏在 2.3–6.1 之间、识别基本全对。zm_096 是起伏、发音清晰度、浊音比例、语速综合靠前的一个，音高中等（中位约 150 Hz）；想换声音改 `gen-commentary.py` 的参数重新生成即可。
+此前（2026-10-18 之前）用的是 [Kokoro-82M-v1.1-zh](https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh)（Apache 2.0）男声 zm_096（`scripts/audio/gen-commentary.py`），选型对比（MeloTTS-Chinese 只有一个女声、音高起伏约 1.2 个半音、Whisper 识别有约两成的字听错；Kokoro v1.1-zh 的 45 个男声起伏在 2.3–6.1 之间）见 git 历史。裁判报分仍然是 Kokoro 的英式男声（上一节）。
 
 ## 球员头像照片（Wikimedia Commons / Flickr / YouTube 视频截图）
 
