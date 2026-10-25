@@ -11,6 +11,12 @@
   - shirts01（shirts01_cc0.zip）：Polo 衫 namuhekam_male_polo_shirt（作者 namuhekam）
   - pants01（pants01_cc0.zip）：长裤 toigo_wool_pants（作者 MargaretToigo），在大腿中段截成短裤
   三个压缩包里只有 obj / mhclo / mhmat / png / thumb 和一个 json，没有可执行文件或脚本。
+  - 建模轮（2026-10-25）多用了同一个 makehuman_system_assets 包里的（packs/makehuman_system_assets.json 逐项写着 CC0，没有新下载）：
+    发型 short01 / short02 / short04（网格和带透明度的贴图，贴图缩成灰度 + 透明度的图集，以 WebP 放进 character.glb）、
+    眉毛 eyebrow001 / 005 / 009 / 010（同上，进同一张图集）、眼睛 high-poly（网格；brown_eye 贴图只用来烘顶点色，不进包）、
+    牙齿 teeth_base（减面）、皮肤 young_asian_male 的贴图（只用来烘头部顶点色的深浅和嘴唇的红，不进包）；
+    MPFB 扩展自带的 MakeHuman 变形目标（脸部修改器、人种、表情单元 expression units，和上面的体型目标一样是 MakeHuman 的 CC0 目标）。
+    长相数值（data/likeness.json）是看公开照片和报道写的修改器数值，模型和包里没有任何照片。
 - Quaternius **Universal Base Characters**（2026-10 MakeHuman 身体之前用的身体，`CHARACTER_BODY=ubc` 还能生成）（Standard 免费版）：人体模型（Superhero_Male_FullBody，只用身体网格和骨骼，
   不用贴图、眼睛和头发网格）。授权 CC0 1.0（包里的 License_Standard.txt：「CC0 1.0 Universal (CC0 1.0) Public Domain
   Dedication」；页面上写「Free to use in personal, educational and commercial projects」）。2026-10 从 Quaternius 自己的
