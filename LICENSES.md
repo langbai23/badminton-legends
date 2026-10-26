@@ -31,6 +31,8 @@
 
 `data/shot-targets.json` 是从 ShuttleSet 和 ShuttleSet22（Wang et al., KDD 2023 / IJCAI 2023 Workshop，wywyWang/CoachAI-Projects，MIT 授权；论文 CC BY 4.0）男单 60 场逐拍数据统计出来的指标：14 位球员的 34 项选球、落点指标和两种变化度，加上失误统计（以失误结束的回合、失误那一拍的击球高度、每种球的失误率）。只含统计结果，不含原始数据；`scripts/shot-fingerprint.ts` 拿模拟的同口径数字对照。
 
+`data/pattern-real.json` 是同一批 ShuttleSet / ShuttleSet22 男单 60 场逐拍数据（出处、授权同上），由 `scripts/pattern-real.ts` 换成游戏的比赛记录格式、用游戏的球路识别器（`src/sim/patterns.ts`）认出每一分的套路后统计的份额（每种套路占本人得分的比例）。只含统计结果，不含原始数据。
+
 `data/continuity.json` 的 `olympics2012` 是从伦敦 2012 奥运羽毛球逐拍标注（Badminton Olympic Dataset，https://cvit.iiit.ac.in/research/projects/cvit-projects/badminton-analytics ）里两场男单半决赛（林丹对李炫一、李宗伟对谌龙）统计出来的几个数字（杀球占比、杀后下一拍还杀、接杀后转杀、前四拍有杀、杀到下一拍的时间），用来对照林丹、李宗伟「衔接」的先验。引用：Anurag Ghosh, Suriya Singh, C. V. Jawahar. *Towards Structured Analysis of Broadcast Badminton Videos.* WACV 2018。项目页没有写授权条款，只要求引用论文；仓库里只有统计数字，原始 .eaf 标注不入库。
 
 ## 画质用的贴图和环境（2026-10-18）
