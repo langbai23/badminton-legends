@@ -116,6 +116,39 @@
 | [Crowd gasp.wav（635110）](https://freesound.org/people/RadioCounseling/sounds/635110/) | RadioCounseling | CC0 |
 | [Tennis hit.WAV in sports hall（418547）](https://freesound.org/people/14FPanskaBubik_Lukas/sounds/418547/) | 14FPanskaBubik_Lukas | CC0 |
 
+<!-- b2:start -->
+## 转播录音提取的样本 bank 2（`assets/audio/b2-*.mp3`，2026-11-18 从 UE 版搬来）
+
+UE 版 2026-11-09 从世界羽联官方频道 BWF TV 的 21 场整场比赛转播音轨里切的样本，共 243 个：击球 144 个（15 个真实球种、分近端 / 远端球员，0.5 秒）、鞋声和落地 42 个、观众底噪 4 条、观众反应 / 掌声 / 「哦」25 个、球员喊声 28 个（安赛龙、金廷，只取 2021 年 1 月曼谷空场的比赛）。
+和上面 `bx-*` 同样的授权情况：转播音频的版权属于世界羽联 BWF TV，这里没有授权，是用户决定公开版也使用（2026-10-18 对 bx-* 的决定，11-18 让 UE 能搬的都搬）。**不含解说和裁判的人声**：解说的居中人声用 Demucs（`htdemucs`，MIT）分开并减掉；喊声是球员本人在球场话筒里的声音。
+切样本的管线在 UE 仓库 `Tools/snd2/`（PROTOTYPE.md「音效换成比赛录音」），搬运脚本 `scripts/audio/b2/import-b2.mjs`；每个样本的视频、秒数、类别、球员、测得的特征逐个登记在 `assets/audio/provenance.json`（`b2-*` 条目）。
+想换掉某个样本：删掉对应的 `b2-*.mp3` 并从 `src/audio/bank2.ts` 里去掉它（或改 UE 那边的清单后重跑脚本）；整套 bank 2 缺失时 `sound.ts` 自动退回 `bx-*`。
+
+| 视频 | 频道 | 比赛 | 取了多少 |
+|---|---|---|---|
+| [O669aZhH0LI](https://www.youtube.com/watch?v=O669aZhH0LI) | BWF TV | F / MS / Kento MOMOTA (JPN) [1] vs. CHOU Tien Chen (TPE) [2] / BWF 2019 | crowd 1、foot 5、hit 20、react 3 |
+| [HTBf9wFL0mk](https://www.youtube.com/watch?v=HTBf9wFL0mk) | BWF TV | YONEX Thailand Open / Day 5: Anthony Sinisuka Ginting (INA) [5] vs. Viktor Axelsen (DEN) [4] | foot 1、hit 17、land 1、shout 8 |
+| [SYyvDrUgClc](https://www.youtube.com/watch?v=SYyvDrUgClc) | BWF TV | F / MS / CHOU Tien Chen (TPE) [4] vs Kento MOMOTA (JPN) [2] / BWF 2018 | hit 19、land 1、react 3 |
+| [YP8YlZkrQq8](https://www.youtube.com/watch?v=YP8YlZkrQq8) | BWF TV | TOYOTA Thailand Open / Day 4: Anders Antonsen (DEN) [3] vs. Sameer Verma (IND) | foot 3、hit 14、land 1 |
+| [-aOI9_JxoWc](https://www.youtube.com/watch?v=-aOI9_JxoWc) | BWF TV | Group B / MS / CHOU Tien Chen (TPE) vs. CHEN Long (CHN) / BWF 2019 | foot 3、hit 10、ooh 1、react 1 |
+| [IuXmsimDOW8](https://www.youtube.com/watch?v=IuXmsimDOW8) | BWF TV | YONEX Thailand Open / Day 6: Ng Ka Long Angus (HKG) [7] vs. Viktor Axelsen (DEN) [4] | foot 3、hit 10、land 1、shout 1 |
+| [4rQUHv9oGpI](https://www.youtube.com/watch?v=4rQUHv9oGpI) | BWF TV | TOYOTA Thailand Open / Day 6: Hans-Kristian Solberg VIittinghus (DEN) vs. Viktor Axelsen (DEN) [4] | foot 4、hit 7、land 1、shout 3 |
+| [ROAnTfC_8zA](https://www.youtube.com/watch?v=ROAnTfC_8zA) | BWF TV | TOYOTA Thailand Open / Day 4: Hans-Kristian Solberg Vittinghus (DEN) vs. Lee Cheuk Yu (HKG) | foot 3、hit 10、land 1 |
+| [j7_cjmJDYNU](https://www.youtube.com/watch?v=j7_cjmJDYNU) | BWF TV | HSBC BWF World Tour Finals / Day 5: Viktor Axelsen (DEN) vs. Anders Antonsen (DEN) | foot 4、hit 6、shout 2 |
+| [D27aAZvuRTw](https://www.youtube.com/watch?v=D27aAZvuRTw) | BWF TV | TOYOTA Thailand Open / Day 5: Hans-Kristian Solberg Vittinghus (DEN) vs. Anders Antonsen (DEN) [3] | foot 4、hit 7、land 1 |
+| [OzRtd3D0hEo](https://www.youtube.com/watch?v=OzRtd3D0hEo) | BWF TV | TOYOTA Thailand Open / Day 4: Liew Daren (MAS) vs. Viktor Axelsen (DEN) [4] | foot 2、hit 7、shout 3 |
+| [RRI_k2KZgOM](https://www.youtube.com/watch?v=RRI_k2KZgOM) | BWF TV | YONEX Thailand Open / Day 4: Viktor Axelsen (DEN) [4] vs. Jonatan Christie (INA) [6] | foot 2、hit 7、land 1、shout 2 |
+| [YmW83aQFADg](https://www.youtube.com/watch?v=YmW83aQFADg) | BWF TV | QF / MS / Viktor AXELSEN (DEN) [5] vs. CHEN Long (CHN) [4] / BWF 2020 | hit 10、react 2 |
+| [NlDrJyQUTSI](https://www.youtube.com/watch?v=NlDrJyQUTSI) | BWF TV | YONEX Thailand Open / Day 4: Rasmus Gemke (DEN) vs. Anthony Sinisuka Ginting (INA) [5] | shout 9 |
+| [a64pWiUtgJQ](https://www.youtube.com/watch?v=a64pWiUtgJQ) | BWF TV | L. Dan v Lee C.W./MS-F/ Wang Lao Ji BWF World Champ.2013 | crowd 1、ooh 1、react 3 |
+| [eugfCRwSBJo](https://www.youtube.com/watch?v=eugfCRwSBJo) | BWF TV | F / MS / Kento MOMOTA (JPN) [1] vs. CHOU Tien Chen (TPE) [2] / BWF 2019 | ooh 1、react 3 |
+| [8lHAsyRhYYQ](https://www.youtube.com/watch?v=8lHAsyRhYYQ) | BWF TV | QF / MS / SHI Yu Qi (CHN) [7] vs. Viktor AXELSEN (DEN) [2] / BWF 2020 | crowd 1、react 1 |
+| [NVluiq7hLg8](https://www.youtube.com/watch?v=NVluiq7hLg8) | BWF TV | MS / LIN Dan (CHN) [6] vs LEE Chong Wei (MAS) [2] / BWF 2018 | crowd 1、ooh 1 |
+| [5W6txLGZ1Rs](https://www.youtube.com/watch?v=5W6txLGZ1Rs) | BWF TV | QF / MS / Jonatan CHRISTIE (INA) [6] vs. Anders ANTONSEN (DEN) [4] / BWF 2020 | react 2 |
+| [boQC4J4E1ZQ](https://www.youtube.com/watch?v=boQC4J4E1ZQ) | BWF TV | F / MS / Kento MOMOTA (JPN) [1] vs. Viktor AXELSEN (DEN) [5] / BWF 2020 | react 2 |
+| [yu9oyMXRGHY](https://www.youtube.com/watch?v=yu9oyMXRGHY) | BWF TV | F / MS / Anthony Sinisuka GINTING (INA) [7] vs. Anders ANTONSEN (DEN) [4] / BWF 2020 | react 1 |
+<!-- b2:end -->
+
 ## 裁判报分（`assets/umpire/`）
 
 用 [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M)（模型授权 Apache 2.0）通过 [kokoro-onnx](https://github.com/thewh1teagle/kokoro-onnx)（MIT）离线生成的英式男声（bm_george）词块，生成脚本 `scripts/audio/gen-umpire.py`。合成语音，不是真人录音。
