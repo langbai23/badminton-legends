@@ -50,6 +50,21 @@
 衣服、鞋、头发的网格只用来定外形（身体的顶点沿法线贴到它们的最外一层，再减面），它们的贴图没有用、不进包；模型上的颜色是游戏里按部位给的。
 姿势是脚本里按看台的尺寸算的；参考的转播画面（主仓库 `.cache/crowd-ref-2026-11-19/`）只用来看观众怎么坐、怎么站，不入库、不进包。
 
+## 裁判模型（`assets/crowd/officials.glb`，2026-11-19）
+
+`scripts/crowd/build-officials.py`（用 `build-crowd.py` 里同一套函数）在后台 Blender 5.3 里用 MPFB 扩展（代码 GPL-3，只在 Blender 里用，不进包）生成：
+主裁判 + 三种司线员 × 2 档面数，一个坐姿，没有贴图、没有骨骼。用到的都是上面「角色模型」一节的 makehuman_system_assets 资源包里的东西，没有新下载；
+2026-11-19 逐项核对过包里的清单（`packs/makehuman_system_assets.json`），每一项的 license 都是 CC0、作者 makehuman_system：
+
+- 身体基础网格和宏参数变形目标（性别、年龄、胖瘦、身高、人种）、game_engine 骨骼（只用来摆姿势，不导出）；
+- 套装 male_elegantsuit01（主裁判的西装、衬衫、领带）、male_casualsuit03（司线员的长袖有领衬衫和长裤，男女都穿）、male_casualsuit05（夹克）、鞋 shoes01；
+- 发型 short02 / short04 / ponytail01、眼睛 low-poly、眉毛 eyebrow009。
+
+衣服、鞋、头发的网格只用来定外形（和观众一样）。male_elegantsuit01 的贴图（`male_elegantsuit01_diffuse.png`，同一个资源包，CC0）只在生成时读亮度，
+用来分出白衬衫的领口和袖口，贴图本身不进包；模型上的颜色是游戏里按部位给的（宝蓝上衣、黑长裤；主裁判深蓝西装、白衬衫）。
+椅子（司线员的椅子、主裁判的高椅、场地号牌子）是 `src/render/officials.ts` 里程序生成的。
+姿势和制服颜色参考的转播画面（主仓库 `.cache/officials-ref-2026-11-19/`，丹麦公开赛 2015、伦敦 2012、全英 2024 各一帧的裁剪）只用来看裁判怎么坐、穿什么，不入库、不进包。
+
 ## 画质用的贴图和环境（2026-10-18）
 
 场地胶垫颗粒和法线、地板光斑、球网、广告板、记分牌、观众、司线员、裁判椅、环境贴图（球馆内景，`src/render/envmap.ts`）全部是代码里程序生成的，没有下载、没有新增素材文件，没有新的授权要求。广告板上的赞助商名字（VELOCITY、AIRSTRIKE、FEATHERLITE、ARENA CITY、SMASH+）都是虚构的。检查过 MPFB 资源包（makehuman_system_assets、shirts01、pants01，上面「角色模型」一节列的同一批，CC0）里的 Polo 衫织物贴图（`Polo_Base_Color.png`、`Polo_Normal_OpenGL.png`、`Polo_Roughness.png`，CC0）：角色模型没有 UV，用不上，所以没有打进包。
