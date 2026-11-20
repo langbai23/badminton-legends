@@ -17,6 +17,16 @@
     牙齿 teeth_base（减面）、皮肤 young_asian_male 的贴图（只用来烘头部顶点色的深浅和嘴唇的红，不进包）；
     MPFB 扩展自带的 MakeHuman 变形目标（脸部修改器、人种、表情单元 expression units，和上面的体型目标一样是 MakeHuman 的 CC0 目标）。
     长相数值（data/likeness.json）是看公开照片和报道写的修改器数值，模型和包里没有任何照片。
+  - 按照片量脸（2026-11-19，`tools/face/`，记录在 `review/faces-2026-11-19/`）：12 位球星的脸部修改器数值改成按照片量出来的比例拟合的。
+    **照片只当参考量比例、对照着看，不入库、不进包**（只在主仓库 `.cache/face-ref-2026-11-19/`）；游戏里仍然只有 MakeHuman 的 CC0 网格和变形目标，
+    没有任何照片或照片生成的贴图。用到的照片都是自由授权的（Wikimedia Commons 上的 CC BY / CC BY-SA / 公有领域图片，
+    和 `data/avatars.json` 已经登记的那类 YouTube 采访视频：频道 Jurnal Bulutangkis 自己拍、标了 CC BY 的），逐张的文件名、作者、授权在
+    `review/faces-2026-11-19/sources.md`，清单在 `tools/face/refs.json`。胡茬（likeness 的 `stubble`）是把皮肤的顶点色压暗，没有贴图。
+    模型多导出了全部脸部修改器的变形目标（以前只导出用到的），同一个 MakeHuman 的 CC0 目标。
+    **量脸用的工具（只在开发机上用，不进包）**：[MediaPipe](https://github.com/google/mediapipe) 1.2.3（Google，Apache 2.0，从 PyPI 装在独立的虚拟环境
+    `.cache/face-venv` 里；依赖 numpy、opencv-contrib-python、matplotlib、absl-py、flatbuffers、sounddevice，另装 pillow、scipy、aiohttp）和它的两个模型
+    `face_landmarker.task`、`selfie_multiclass_256x256.tflite`（Apache 2.0，从 Google 的 mediapipe-models 存储桶下载到 `.cache/face-models/`）；
+    视频取帧用本机的 yt-dlp（Unlicense）和 ffmpeg。
 - Quaternius **Universal Base Characters**（2026-10 MakeHuman 身体之前用的身体，`CHARACTER_BODY=ubc` 还能生成）（Standard 免费版）：人体模型（Superhero_Male_FullBody，只用身体网格和骨骼，
   不用贴图、眼睛和头发网格）。授权 CC0 1.0（包里的 License_Standard.txt：「CC0 1.0 Universal (CC0 1.0) Public Domain
   Dedication」；页面上写「Free to use in personal, educational and commercial projects」）。2026-10 从 Quaternius 自己的
