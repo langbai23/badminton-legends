@@ -35,6 +35,21 @@
 
 `data/continuity.json` 的 `olympics2012` 是从伦敦 2012 奥运羽毛球逐拍标注（Badminton Olympic Dataset，https://cvit.iiit.ac.in/research/projects/cvit-projects/badminton-analytics ）里两场男单半决赛（林丹对李炫一、李宗伟对谌龙）统计出来的几个数字（杀球占比、杀后下一拍还杀、接杀后转杀、前四拍有杀、杀到下一拍的时间），用来对照林丹、李宗伟「衔接」的先验。引用：Anurag Ghosh, Suriya Singh, C. V. Jawahar. *Towards Structured Analysis of Broadcast Badminton Videos.* WACV 2018。项目页没有写授权条款，只要求引用论文；仓库里只有统计数字，原始 .eaf 标注不入库。
 
+## 观众模型（`assets/crowd/crowd.glb`，2026-11-19）
+
+`scripts/crowd/build-crowd.py` 在后台 Blender 5.3 里用 MPFB 扩展（代码 GPL-3，只在 Blender 里用，不进包）生成：5 种观众 × 3 档面数，
+每个网格带坐着、半蹲、站起来欢呼三个姿势，没有贴图、没有骨骼。用到的都是上面「角色模型」一节那三个 MakeHuman 社区资源包里的东西，
+没有新下载；2026-11-19 逐项核对过包里的清单（`packs/*.json`），每一项的 license 都是 CC0：
+
+- makehuman_system_assets（作者 makehuman_system）：身体基础网格和宏参数变形目标（性别、年龄、胖瘦、身高、人种）、game_engine 骨骼（只用来摆姿势，不导出）、
+  套装 male_casualsuit02 / male_casualsuit05 / male_casualsuit06 / female_casualsuit01、鞋 shoes02 / 03 / 04 / 05 / 06、
+  发型 short02 / short03 / short04 / long01 / bob01、眼睛 low-poly、眉毛 eyebrow009；
+- shirts01：毛衣 toigo_fisherman_sweater（作者 MargaretToigo）；
+- pants01：长裤 toigo_wool_pants（作者 MargaretToigo）。
+
+衣服、鞋、头发的网格只用来定外形（身体的顶点沿法线贴到它们的最外一层，再减面），它们的贴图没有用、不进包；模型上的颜色是游戏里按部位给的。
+姿势是脚本里按看台的尺寸算的；参考的转播画面（主仓库 `.cache/crowd-ref-2026-11-19/`）只用来看观众怎么坐、怎么站，不入库、不进包。
+
 ## 画质用的贴图和环境（2026-10-18）
 
 场地胶垫颗粒和法线、地板光斑、球网、广告板、记分牌、观众、司线员、裁判椅、环境贴图（球馆内景，`src/render/envmap.ts`）全部是代码里程序生成的，没有下载、没有新增素材文件，没有新的授权要求。广告板上的赞助商名字（VELOCITY、AIRSTRIKE、FEATHERLITE、ARENA CITY、SMASH+）都是虚构的。检查过 MPFB 资源包（makehuman_system_assets、shirts01、pants01，上面「角色模型」一节列的同一批，CC0）里的 Polo 衫织物贴图（`Polo_Base_Color.png`、`Polo_Normal_OpenGL.png`、`Polo_Roughness.png`，CC0）：角色模型没有 UV，用不上，所以没有打进包。
