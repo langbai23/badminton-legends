@@ -23,6 +23,14 @@
     和 `data/avatars.json` 已经登记的那类 YouTube 采访视频：频道 Jurnal Bulutangkis 自己拍、标了 CC BY 的），逐张的文件名、作者、授权在
     `review/faces-2026-11-19/sources.md`，清单在 `tools/face/refs.json`。胡茬（likeness 的 `stubble`）是把皮肤的顶点色压暗，没有贴图。
     模型多导出了全部脸部修改器的变形目标（以前只导出用到的），同一个 MakeHuman 的 CC0 目标。
+  - 脸第二轮（2026-11-20，记录在 `review/faces2-2026-11-20/`）：`assets/character.glb` 的发型网格多了两种发型和睫毛，图集从 1024 见方变成 2048 × 1024。
+    - **short03**（发型）、**eyelashes01**（睫毛）：都在已经下载过的 makehuman_system_assets 包里（文件头写着 2020 年 9 月以 CC0 放出，作者 MakeHuman 团队），没有新下载。
+    - **culturalibre_hair_05**（发型，游戏里叫 hair_05）：MakeHuman 社区的资源包 **hair01**（`hair01_cc0.zip`，227 MB，2026-11-20 从官方服务器
+      `https://files2.makehumancommunity.org/asset_packs/hair01/hair01_cc0.zip` 下载，不用账号；资源包页 `static.makehumancommunity.org/assets/assetpacks/hair01.html`）。
+      这一个发型的 `.mhclo` 文件头写明 `license CC-0`、`author culturalibre`、`Original by swift502`；只用了它的网格（贴图是一小块纯色，不进包）。CC0 不要求署名，这里照样写上出处。
+      同一个包里的 culturalibre_hair_02 文件头写的是 AGPL3，和包名的 cc0 对不上，**没有用**；包里其余发型（多是女式长发）也没有用。
+      资源包解压在主仓库 `.cache/character/mpfb/hair01_pack/`（不入库），用到的那一个目录另拷到 `.cache/character/mpfb/data/hair/culturalibre_hair_05/`。
+    - 这一轮多做的 7 位球星的脸同样只拿自由授权的照片量比例（来源并进 `review/faces-2026-11-19/sources.md` 和 `tools/face/refs.json`），照片不入库、不进包。
     **量脸用的工具（只在开发机上用，不进包）**：[MediaPipe](https://github.com/google/mediapipe) 1.2.3（Google，Apache 2.0，从 PyPI 装在独立的虚拟环境
     `.cache/face-venv` 里；依赖 numpy、opencv-contrib-python、matplotlib、absl-py、flatbuffers、sounddevice，另装 pillow、scipy、aiohttp）和它的两个模型
     `face_landmarker.task`、`selfie_multiclass_256x256.tflite`（Apache 2.0，从 Google 的 mediapipe-models 存储桶下载到 `.cache/face-models/`）；
